@@ -1,0 +1,17 @@
+.layout h1 {
+  margin: 0;
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .layout h1 {
+    font-size: 24px;
+  }
+  .cards {
+    flex-wrap: wrap;
+    justify-content: center !important;
+  }
+}

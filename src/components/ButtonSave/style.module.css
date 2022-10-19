@@ -1,0 +1,27 @@
+.btn {
+  border: none;
+  outline: none;
+  background-color: var(--blue);
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: white;
+}
+
+.btn:hover {
+  background-color: var(--blue-hover);
+  transition: 0.3s all ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .btn {
+    padding: 5px 13px;
+    font-size: 14px;
+  }
+}
