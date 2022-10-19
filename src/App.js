@@ -1,8 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Badge } from 'react-bootstrap';
-import ButtonSave from './components/ButtonSave';
 import CardPopular from './components/CardPopular';
 import LayoutSectionPopular from './components/LayoutSectionPopular';
 
