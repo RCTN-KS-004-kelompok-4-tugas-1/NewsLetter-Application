@@ -1,0 +1,31 @@
+.navbar--container {
+  justify-content: left;
+
+  align-items: center;
+  padding: 10px 50px;
+  border-bottom: 1px solid #c3c0c0;
+}
+.nav_item--left {
+  flex-basis: 50%;
+  gap: 20px;
+}
+.nav_item--center {
+  flex-basis: 30%;
+}
+.nav_item--right {
+  display: flex;
+  gap: 20px;
+  flex-basis: 20%;
+}
+.input {
+  flex-wrap: nowrap;
+  position: relative;
+  bottom: 6px;
+}
+.input > div > input {
+  background-color: var(--background-color);
+}
+.input > button {
+  position: relative;
+  right: 7px;
+}

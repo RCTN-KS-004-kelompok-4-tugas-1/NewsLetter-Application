@@ -4,3 +4,22 @@
   --blue: #67aadc;
   --blue-hover: #518ab6;
 }
+
+.App {
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+.link {
+  font-size: 18px;
+  font-weight: 500;
+}
+.brand {
+  font-size: 28px;
+  font-weight: 700;
+}
+.link,
+.brand {
+  color: black;
+}
