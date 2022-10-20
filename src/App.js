@@ -2,10 +2,19 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CardPopular from './components/CardPopular';
 import LayoutSectionPopular from './components/LayoutSectionPopular';
+import { Routes, Route } from 'react-router-dom';
+import Indonesia from './pages/Indonesia';
+import Covid19 from './pages/Covid19';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Indonesia />} />
+        <Route path="covid-19" element={<Covid19 />} />
+      </Routes>
       <LayoutSectionPopular>
         <CardPopular
           img={
