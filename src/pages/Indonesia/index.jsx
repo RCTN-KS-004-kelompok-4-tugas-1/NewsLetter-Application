@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Indonesia = () => {
+function Indonesia() {
   return <div>Indonesia</div>;
-};
+}
 
 export default Indonesia;

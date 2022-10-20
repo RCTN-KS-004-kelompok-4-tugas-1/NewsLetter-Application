@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Saved = () => {
+function Saved() {
   return <div>Saved</div>;
-};
+}
 
 export default Saved;
