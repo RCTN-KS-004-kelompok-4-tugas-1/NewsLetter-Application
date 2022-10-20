@@ -1,10 +1,10 @@
 import React from 'react';
 import CardPopular from '../../components/CardPopular';
-import LayoutSectionPopular from '../../components/LayoutSectionPopular';
+import LayoutSection from '../../components/LayoutSection';
 
-const HomePage = () => {
+function HomePage() {
   return (
-    <LayoutSectionPopular>
+    <LayoutSection title="Popular News">
       <CardPopular
         img={
           'https://cdn.vox-cdn.com/thumbor/lh2YBh8cWvn3ARrenXxjolBte4o=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23932655/acastro_STK106__01.jpg'
@@ -40,8 +40,8 @@ const HomePage = () => {
           "You'll finally be able to get your hands on iPadOS 16 next Monday, October 24th, Apple announced this morning. The new OS includes support for Apple's Stage Manager multi-tasking feature, which should make it easier to move between multiple apps on your iPad.…"
         }
       />
-    </LayoutSectionPopular>
+    </LayoutSection>
   );
-};
+}
 
 export default HomePage;
