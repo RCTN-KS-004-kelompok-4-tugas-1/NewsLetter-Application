@@ -1,6 +1,8 @@
 import React from 'react';
-import ButtonSave from '../ButtonSave';
+import IconButton from '../IconButton';
 import styles from './styles.module.css';
+import { IconBookmark, IconBookmarkFilled } from '../Icons';
+
 function CardRecent(props) {
   return (
     <div className={styles.card}>
@@ -12,9 +14,13 @@ function CardRecent(props) {
 
         <h6 className="card-header d-flex justify-content-between">
           {props.author}
-          <button type="button" className="btn btn-sm btn-primary">
-            {props.children}
-          </button>
+          <IconButton>
+            {props.active ? (
+              <IconBookmark color="#ffffff" />
+            ) : (
+              <IconBookmarkFilled width={26} height={26} />
+            )}
+          </IconButton>
         </h6>
       </div>
       {props.isReversed && (
