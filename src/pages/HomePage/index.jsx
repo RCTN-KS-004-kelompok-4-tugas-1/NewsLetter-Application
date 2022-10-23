@@ -1,4 +1,5 @@
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import CardPopular from '../../components/CardPopular';
 import CardRecent from '../../components/CardRecent';
 import LayoutSection from '../../components/LayoutSection';
@@ -44,66 +45,68 @@ function HomePage() {
         />
       </LayoutSection>
       <LayoutSection title="Recent News">
-        <CardRecent
-          img={
-            'https://s.yimg.com/os/creatr-uploaded-images/2022-10/4d5df170-4f00-11ed-a7aa-b9f7641311d6'
-          }
-          category={'covid-19'}
-          title={
-            'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
-          }
-          author={'Author name'}
-        />
-        <CardRecent
-          img={
-            'https://s.yimg.com/os/creatr-uploaded-images/2022-10/4d5df170-4f00-11ed-a7aa-b9f7641311d6'
-          }
-          category={'covid-19'}
-          title={
-            'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
-          }
-          author={'Author name'}
-        />
-        <CardRecent
-          img={
-            'https://s.yimg.com/os/creatr-uploaded-images/2022-10/4d5df170-4f00-11ed-a7aa-b9f7641311d6'
-          }
-          category={'covid-19'}
-          title={
-            'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
-          }
-          author={'Author name'}
-        />
-        <CardRecent
-          img={
-            'https://s.yimg.com/os/creatr-uploaded-images/2022-10/4d5df170-4f00-11ed-a7aa-b9f7641311d6'
-          }
-          category={'covid-19'}
-          title={
-            'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
-          }
-          author={'Author name'}
-        />
-        <CardRecent
-          img={
-            'https://s.yimg.com/os/creatr-uploaded-images/2022-10/4d5df170-4f00-11ed-a7aa-b9f7641311d6'
-          }
-          category={'covid-19'}
-          title={
-            'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
-          }
-          author={'Author name'}
-        />
-        <CardRecent
-          img={
-            'https://s.yimg.com/os/creatr-uploaded-images/2022-10/4d5df170-4f00-11ed-a7aa-b9f7641311d6'
-          }
-          category={'covid-19'}
-          title={
-            'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
-          }
-          author={'Author name'}
-        />
+        <Container fluid="md">
+          <CardRecent
+            img={
+              'https://s.yimg.com/os/creatr-uploaded-images/2022-10/4d5df170-4f00-11ed-a7aa-b9f7641311d6'
+            }
+            category={'covid-19'}
+            title={
+              'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
+            }
+            author={'Author name'}
+          />
+          <CardRecent
+            img={
+              'https://s.yimg.com/os/creatr-uploaded-images/2022-10/4d5df170-4f00-11ed-a7aa-b9f7641311d6'
+            }
+            category={'covid-19'}
+            title={
+              'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
+            }
+            author={'Author name'}
+          />
+          <CardRecent
+            img={
+              'https://s.yimg.com/os/creatr-uploaded-images/2022-10/4d5df170-4f00-11ed-a7aa-b9f7641311d6'
+            }
+            category={'covid-19'}
+            title={
+              'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
+            }
+            author={'Author name'}
+          />
+          <CardRecent
+            img={
+              'https://s.yimg.com/os/creatr-uploaded-images/2022-10/4d5df170-4f00-11ed-a7aa-b9f7641311d6'
+            }
+            category={'covid-19'}
+            title={
+              'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
+            }
+            author={'Author name'}
+          />
+          <CardRecent
+            img={
+              'https://s.yimg.com/os/creatr-uploaded-images/2022-10/4d5df170-4f00-11ed-a7aa-b9f7641311d6'
+            }
+            category={'covid-19'}
+            title={
+              'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
+            }
+            author={'Author name'}
+          />
+          <CardRecent
+            img={
+              'https://s.yimg.com/os/creatr-uploaded-images/2022-10/4d5df170-4f00-11ed-a7aa-b9f7641311d6'
+            }
+            category={'covid-19'}
+            title={
+              'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
+            }
+            author={'Author name'}
+          />
+        </Container>
       </LayoutSection>
     </>
   );
