@@ -5,15 +5,18 @@ import Nav from 'react-bootstrap/Nav';
 import { default as NavComponent } from 'react-bootstrap/Navbar';
 import styles from './styles.module.css';
 import { IconSearch } from '../Icons/index';
-
+import { useDispatch } from 'react-redux';
+import { setSearch } from '../../store/reducer/searchSlice/searchSlice';
 function Navbar() {
+  const dispatch = useDispatch();
   const [input, setInput] = useState('');
   const handleChange = (e) => {
     setInput(e.target.value);
+    // dispatch(setSearch(input));
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(input);
+    dispatch(setSearch(input));
   };
 
   return (

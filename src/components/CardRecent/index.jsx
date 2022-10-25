@@ -9,7 +9,9 @@ function CardRecent(props) {
       {!props.isReversed && <img src={props.img} alt="" />}
       <div className="card-body">
         <h2 className="card-title">{props.category}</h2>
-        <h3 className="card-title">{props.title}</h3>
+        <h3 onClick={props.onClick} className="card-title">
+          {props.title}
+        </h3>
         <p className="card-text">{props.description}</p>
         <h6 className="card-header d-flex justify-content-between">
           {props.author}
