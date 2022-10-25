@@ -10,6 +10,11 @@ function Navbar() {
   return (
     <NavComponent bg="light" expand="lg">
       <NavComponent.Toggle aria-controls="basic-navbar-nav" />
+      <div className={styles['nav_brand']}>
+        <Link to="/" className="brand text-decoration-none">
+          N E W S
+        </Link>
+      </div>
       <NavComponent.Collapse
         id="basic-navbar-nav"
         className={styles['navbar--container']}

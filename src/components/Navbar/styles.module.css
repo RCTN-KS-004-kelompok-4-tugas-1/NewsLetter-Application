@@ -29,3 +29,18 @@
   position: relative;
   right: 7px;
 }
+.nav_brand {
+  display: none;
+}
+@media only screen and (max-width: 992px) {
+  .nav_item--center {
+    display: none;
+  }
+  .nav_item--right {
+    margin-top: 12px;
+  }
+  .nav_brand {
+    display: block;
+    margin: 0 auto;
+  }
+}
