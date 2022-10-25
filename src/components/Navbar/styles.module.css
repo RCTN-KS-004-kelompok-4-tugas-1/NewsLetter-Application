@@ -37,7 +37,9 @@
     display: none;
   }
   .nav_item--right {
-    margin-top: 12px;
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 20px;
   }
   .nav_brand {
     display: block;
