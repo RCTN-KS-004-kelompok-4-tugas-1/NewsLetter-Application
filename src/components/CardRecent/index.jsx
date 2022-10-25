@@ -11,7 +11,6 @@ function CardRecent(props) {
         <h2 className="card-title">{props.category}</h2>
         <h3 className="card-title">{props.title}</h3>
         <p className="card-text">{props.description}</p>
-
         <h6 className="card-header d-flex justify-content-between">
           {props.author}
           <IconButton>

@@ -1,92 +1,68 @@
 .card {
-    display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */
-    flex-direction: column;
-    width: 20%;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    border-radius: 15px;
-    margin-top: 30px;
-    margin-bottom: 100px;
-    float: left;
-    margin: 30px;
-    margin-bottom: 50px;
-    /* flex-wrap: wrap; */
-    /* justify-content: space-between; */
-    padding: 12px;
-    bottom: 50px;
-    min-height: 100%;
-    /* word-wrap: break-word; */
-    overflow: hidden;
-    /* overflow-wrap: break-word; */
-    /* word-break: break-all; */
-    /* hyphens: auto; */
-    text-overflow: ellipsis;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  margin: 30px 2em 50px 2em;
+  padding: 12px;
+  min-height: 100%;
+  width: 350px;
+  flex-wrap: wrap;
+  background-color: white;
+  border-radius: 15px;
+  float: left;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.card .imgReversed {
+  border-radius: 15px !important;
+}
+
+.card h2 {
+  margin: 0;
+  margin-top: 1rem;
+  color: gray;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: 'Roboto';
+  font-weight: 400;
+}
+
+.card h3 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0;
+}
+.card h6 {
+  font-family: 'Roboto';
+  margin: 0;
+  color: gray;
+  font-size: 14px;
+}
+
+.card p {
+  font-family: 'Roboto';
+  color: var(--gray);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 90%;
   }
-  
-  /* .luas{
-      width: 2em;
-    } */
-  /* .kotak{
-      display: flex;
-      width: 100%;
-    } */
-  
-  .card img {
-    width: 100%;
-    border-radius: 15px 15px 0 0;
-  }
-  
-  .card .imgReversed {
-    border-radius: 0 0 15px 15px !important;
-  }
-  
-  .card h2 {
-    margin: 0;
-    margin-top: 1rem;
-    color: gray;
-    text-transform: uppercase;
-    font-size: 10px;
-    font-family: 'Roboto';
-    font-weight: 400;
-  }
-  
-  .card h3 {
-    font-family: 'Roboto';
-    font-weight: bold;
-    font-size: 15px;
-    margin: 0;
-    /* word-wrap: break-word;
-      word-break: break-all;
-      hyphens: auto; */
-    /* text-overflow: ellipsis; */
-  }
-  .card h6 {
-    font-family: 'Roboto';
-    margin: 0;
-    color: gray;
-  }
-  
-  .card p {
-    font-family: 'Roboto';
-    color: var(--gray);
-    font-weight: 400;
+  .card h1 {
     font-size: 16px;
-    line-height: 19px;
   }
-  
-  @media screen and (max-width: 768px) {
-    .card {
-      width: 90%;
-    }
-    .card h1 {
-      font-size: 16px;
-    }
-    .card h2 {
-      font-size: 14px;
-    }
-    .card p {
-      font-size: 14px;
-    }
+  .card h2 {
+    font-size: 20px;
   }
+  .card p {
+    font-size: 14px;
+  }
+}
