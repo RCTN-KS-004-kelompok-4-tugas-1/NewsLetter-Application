@@ -36,10 +36,6 @@
   font-weight: bold;
   font-size: 20px;
   margin: 0;
-  /* word-wrap: break-word;
-      word-break: break-all;
-      hyphens: auto; */
-  /* text-overflow: ellipsis; */
 }
 .card h6 {
   font-family: 'Roboto';
