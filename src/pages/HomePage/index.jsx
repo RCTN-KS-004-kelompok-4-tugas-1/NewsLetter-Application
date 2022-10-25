@@ -4,6 +4,41 @@ import CardPopular from '../../components/CardPopular';
 import CardRecent from '../../components/CardRecent';
 import LayoutSection from '../../components/LayoutSection';
 
+const anAPI = [
+  {
+    img: 'https://s.yimg.com/os/creatr-uploaded-images/2022-10/4d5df170-4f00-11ed-a7aa-b9f7641311d6',
+    category:'covid-19',
+    title: 'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines',
+    author:`Author name | asjda `,
+  },
+  {
+    img: 'https://s.yimg.com/os/creatr-uploaded-images/2022-10/4d5df170-4f00-11ed-a7aa-b9f7641311d6',
+    category:'Programming',
+    title: 'satu How this small the US-Canada border has given out 50,000 vaccines',
+    author:`Author sa | wioq `,
+  },
+  {
+    img: 'https://s.yimg.com/os/creatr-uploaded-images/2022-10/4d5df170-4f00-11ed-a7aa-b9f7641311d6',
+    category:'covid-19',
+    title: 'dua How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines',
+    author:`Author sada | asjda `,
+  },
+  {
+    img: 'https://s.yimg.com/os/creatr-uploaded-images/2022-10/4d5df170-4f00-11ed-a7aa-b9f7641311d6',
+    category:'covid-19',
+    title: 'tiga How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines',
+    author:`Author name | asjda `,
+  },
+  {
+    img: 'https://s.yimg.com/os/creatr-uploaded-images/2022-10/4d5df170-4f00-11ed-a7aa-b9f7641311d6',
+    category:'covid-88',
+    title: 'empat How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines',
+    author:`Author asdas | asjda `,
+  },
+]
+
+const aDate = "29/29/28"
+
 function HomePage() {
   return (
     <>
@@ -54,7 +89,7 @@ function HomePage() {
             title={
               'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
             }
-            author={'Author name'}
+            author={`Author name |  ${aDate} `}
           />
           <CardRecent
             img={
@@ -64,7 +99,7 @@ function HomePage() {
             title={
               'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
             }
-            author={'Author name'}
+            author={`Author name |  ${aDate}  `}
           />
           <CardRecent
             img={
@@ -74,7 +109,7 @@ function HomePage() {
             title={
               'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
             }
-            author={'Author name'}
+            author={`Author name | ${aDate} `}
           />
           <CardRecent
             img={
@@ -84,7 +119,7 @@ function HomePage() {
             title={
               'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
             }
-            author={'Author name'}
+            author={`Author name | ${aDate} `}
           />
           <CardRecent
             img={
@@ -94,7 +129,7 @@ function HomePage() {
             title={
               'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
             }
-            author={'Author name'}
+            author={`Author name | ${aDate} `}
           />
           <CardRecent
             img={
@@ -104,7 +139,7 @@ function HomePage() {
             title={
               'How this small town of 16,000 near the US-Canada border has given out 50,000 vaccines'
             }
-            author={'Author name'}
+            author={`Author name | ${aDate} `}
           />
         </Container>
       </LayoutSection>
