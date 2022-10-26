@@ -41,6 +41,7 @@ function Indonesia() {
                   category: 'indonesia',
                   title: item.title,
                   description: item.description,
+                  time: moment(item.publishedAt).format('MMMM Do YYYY'),
                 }}
               />
             );

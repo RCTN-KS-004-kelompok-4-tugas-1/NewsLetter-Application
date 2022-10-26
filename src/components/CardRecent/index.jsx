@@ -2,9 +2,14 @@ import React from 'react';
 import IconButton from '../IconButton';
 import styles from './styles.module.css';
 import { IconBookmark, IconBookmarkFilled } from '../Icons';
+import { useDispatch, useSelector } from 'react-redux';
+import { addSaved, deleteSaved } from '../../store/reducer/savedSlice';
 
 function CardRecent(props) {
   const { img, category, title, author, time, link, description } = props.data;
+  const dispatch = useDispatch();
+  const newsList = useSelector((state) => state.saved.value);
+  const state = newsList.filter((news) => news.title === title)[0];
   return (
     <div className={styles.card}>
       <img src={img} alt="news-cover" />
@@ -20,14 +25,16 @@ function CardRecent(props) {
           </h6>
           <IconButton
             onClick={() => {
-              console.log(props.data);
+              state
+                ? dispatch(deleteSaved(title))
+                : dispatch(addSaved(props.data));
             }}
             className={styles.button}
           >
-            {props.active ? (
-              <IconBookmark color="#ffffff" />
-            ) : (
+            {state ? (
               <IconBookmarkFilled width={26} height={26} />
+            ) : (
+              <IconBookmark color="#ffffff" />
             )}
           </IconButton>
         </div>
