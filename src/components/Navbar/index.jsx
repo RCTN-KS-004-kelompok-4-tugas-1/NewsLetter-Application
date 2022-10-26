@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { NAV_ITEM as navigations } from '../../utils/constants/navItem';
 import Nav from 'react-bootstrap/Nav';
 import { default as NavComponent } from 'react-bootstrap/Navbar';
@@ -12,7 +12,6 @@ function Navbar() {
   const [input, setInput] = useState('');
   const handleChange = (e) => {
     setInput(e.target.value);
-    // dispatch(setSearch(input));
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,9 +22,9 @@ function Navbar() {
     <NavComponent bg="light" expand="lg">
       <NavComponent.Toggle aria-controls="basic-navbar-nav" />
       <div className={styles['nav_brand']}>
-        <Link to="/" className="brand text-decoration-none">
+        <NavLink to="/" className="brand text-decoration-none">
           N E W S
-        </Link>
+        </NavLink>
       </div>
       <NavComponent.Collapse
         id="basic-navbar-nav"
@@ -33,24 +32,29 @@ function Navbar() {
       >
         <Nav className={styles['nav_item--left']}>
           {navigations.map((nav) => (
-            <Link
+            <NavLink
               to={nav.link}
               key={nav.id}
               className="link text-decoration-none"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
               {nav.name}
-            </Link>
+            </NavLink>
           ))}
         </Nav>
         <div className={styles['nav_item--center']}>
-          <Link to="/" className="brand text-decoration-none">
+          <NavLink to="/" className="brand text-decoration-none">
             N E W S
-          </Link>
+          </NavLink>
         </div>
         <div className={styles['nav_item--right']}>
-          <Link to="/saved" className="link text-decoration-none">
+          <NavLink
+            to="/saved"
+            className="link text-decoration-none"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
             Saved
-          </Link>
+          </NavLink>
 
           <form
             className={`input-group ${styles.input}`}
@@ -81,5 +85,7 @@ function Navbar() {
     </NavComponent>
   );
 }
-
+const activeStyle = {
+  color: 'var(--blue-2)',
+};
 export default Navbar;
