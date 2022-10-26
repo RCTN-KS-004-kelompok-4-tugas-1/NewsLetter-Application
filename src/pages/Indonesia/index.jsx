@@ -34,12 +34,14 @@ function Indonesia() {
           popularNews.map((item) => {
             return (
               <CardPopular
-                onClick={() => (window.location.href = item.url)}
                 key={item.id}
-                img={item.urlToImage}
-                category={'indonesia'}
-                title={item.title}
-                description={item.description}
+                data={{
+                  img: item.urlToImage,
+                  link: item.url,
+                  category: 'indonesia',
+                  title: item.title,
+                  description: item.description,
+                }}
               />
             );
           })}

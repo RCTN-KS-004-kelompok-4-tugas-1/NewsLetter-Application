@@ -39,12 +39,14 @@ function Programming() {
           popularNews.map((item) => {
             return (
               <CardPopular
-                onClick={() => (window.location.href = item.url)}
                 key={item.id}
-                img={item.urlToImage}
-                category={`${search ? 'popular' : 'Programming'}`}
-                title={item.title}
-                description={item.description}
+                data={{
+                  img: item.urlToImage,
+                  link: item.url,
+                  category: search ? 'popular' : 'Programming',
+                  title: item.title,
+                  description: item.description,
+                }}
               />
             );
           })}

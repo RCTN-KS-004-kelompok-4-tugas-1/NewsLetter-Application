@@ -39,12 +39,14 @@ function Covid19() {
           popularNews.map((item) => {
             return (
               <CardPopular
-                onClick={() => (window.location.href = item.url)}
                 key={item.id}
-                img={item.urlToImage}
-                category={`${search ? 'popular' : 'covid19'}`}
-                title={item.title}
-                description={item.description}
+                data={{
+                  img: item.urlToImage,
+                  link: item.url,
+                  category: search ? 'popular' : 'covid19',
+                  title: item.title,
+                  description: item.description,
+                }}
               />
             );
           })}

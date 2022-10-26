@@ -34,12 +34,14 @@ function HomePage() {
           popularNews.map((item) => {
             return (
               <CardPopular
-                onClick={() => (window.location.href = item.url)}
                 key={item.id}
-                img={item.urlToImage}
-                category={'popular'}
-                title={item.title}
-                description={item.description}
+                data={{
+                  img: item.urlToImage,
+                  link: item.url,
+                  category: 'popular',
+                  title: item.title,
+                  description: item.description,
+                }}
               />
             );
           })}
