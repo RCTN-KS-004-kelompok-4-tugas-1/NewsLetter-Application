@@ -33,7 +33,7 @@ function Programming() {
   }, [search]);
   return (
     <>
-      <LayoutSection title="Popular News" space="small">
+      <LayoutSection title="Popular News">
         {popularNews &&
           popularNews.map((item) => {
             return (
@@ -54,7 +54,7 @@ function Programming() {
           <p>Search Not Found with the Search Keyword</p>
         )}
       </LayoutSection>
-      <LayoutSection title="Recent News">
+      <LayoutSection title="Recent News" space="small">
         {newsRecent &&
           newsRecent.map((item) => {
             return (
