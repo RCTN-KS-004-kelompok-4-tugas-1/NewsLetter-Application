@@ -12,7 +12,7 @@ function CardRecent(props) {
   const state = newsList.filter((news) => news.title === title)[0];
   return (
     <div className={styles.card}>
-      <img src={img} alt="news-cover" />
+      <img src={img ? img : 'placeholder-image.png'} alt="news-cover" />
       <div className="card-body">
         <h2>{category}</h2>
         <a href={link} className="text-decoration-none text-dark">
