@@ -29,3 +29,20 @@
   position: relative;
   right: 7px;
 }
+.nav_brand {
+  display: none;
+}
+@media only screen and (max-width: 992px) {
+  .nav_item--center {
+    display: none;
+  }
+  .nav_item--right {
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .nav_brand {
+    display: block;
+    margin: 0 auto;
+  }
+}

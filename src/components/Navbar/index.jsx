@@ -1,15 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { NAV_ITEM as navigations } from '../../utils/constants/navItem';
 import Nav from 'react-bootstrap/Nav';
 import { default as NavComponent } from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 import { IconSearch } from '../Icons/index';
-
+import { useDispatch } from 'react-redux';
+import { setSearch } from '../../store/reducer/searchSlice/searchSlice';
 function Navbar() {
+  const dispatch = useDispatch();
+  const [input, setInput] = useState('');
+  const handleChange = (e) => {
+    setInput(e.target.value);
+    // dispatch(setSearch(input));
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(setSearch(input));
+  };
+
   return (
     <NavComponent bg="light" expand="lg">
       <NavComponent.Toggle aria-controls="basic-navbar-nav" />
+      <div className={styles['nav_brand']}>
+        <Link to="/" className="brand text-decoration-none">
+          N E W S
+        </Link>
+      </div>
       <NavComponent.Collapse
         id="basic-navbar-nav"
         className={styles['navbar--container']}
@@ -35,7 +52,10 @@ function Navbar() {
             Saved
           </Link>
 
-          <div className={`input-group ${styles.input}`}>
+          <form
+            className={`input-group ${styles.input}`}
+            onSubmit={handleSubmit}
+          >
             <div className="form-outline">
               <input
                 type="search"
@@ -43,16 +63,19 @@ function Navbar() {
                 className="form-control"
                 placeholder="Search"
                 style={{ paddingBottom: '10px' }}
+                onChange={handleChange}
+                value={input}
               />
             </div>
             <button
-              type="button"
+              type="submit"
               className="btn"
               style={{ backgroundColor: 'var(--blue)' }}
+              onClick={handleSubmit}
             >
               <IconSearch color="#ffffff" />
             </button>
-          </div>
+          </form>
         </div>
       </NavComponent.Collapse>
     </NavComponent>
