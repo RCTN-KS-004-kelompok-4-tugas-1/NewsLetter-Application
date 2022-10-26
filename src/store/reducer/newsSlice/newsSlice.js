@@ -2,8 +2,9 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 import axios from 'axios';
 // const API_KEY = '07a34516595c49a1bb1443fc679cd36f';
+const API_KEY = '5ebaeb88c7804e0abe00744a3c5094df';
 // const API_KEY = '89af4ea40b3042889d0f6ea74b528ff0';
-const API_KEY = 'cdd17b2a52fe4f9e9cfb76e7cf5429e7';
+// const API_KEY = 'cdd17b2a52fe4f9e9cfb76e7cf5429e7';
 const NEWS_URL = `https://newsapi.org/v2/everything`;
 const NEWS_URL_POPULAR = `&sortBy=popularity&pageSize=6&apiKey=${API_KEY}`;
 // const NEWS_URL_POPULAR = `https://newsapi.org/v2/everything?q=indonesia&sortBy=popularity&pageSize=6&apiKey=${API_KEY}`;
