@@ -51,7 +51,7 @@ function Indonesia() {
           <p>Search Not Found with the Search Keyword</p>
         )}
       </LayoutSection>
-      <LayoutSection title="Recent News">
+      <LayoutSection title="Recent News" space="small">
         {newsRecent &&
           newsRecent.map((item) => {
             return (

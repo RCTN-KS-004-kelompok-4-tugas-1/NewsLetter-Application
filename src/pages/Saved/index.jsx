@@ -7,7 +7,7 @@ function Saved() {
   const newsList = useSelector((state) => state.saved.value);
 
   return (
-    <LayoutSection title="Saved News">
+    <LayoutSection title="Saved News" space="small">
       {newsList.map((news) => (
         <Fragment key={news.url}>
           <CardRecent data={news} />

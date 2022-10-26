@@ -18,14 +18,19 @@ function CardRecent(props) {
         <a href={link} className="text-decoration-none text-dark">
           <h3 className="card-title">
             {title?.toString().length > 70
-              ? `${title.substring(0, 69)} ...`
+              ? `${title.substring(0, 67)}...`
               : title}
           </h3>
         </a>
         <p className="card-text">{description}</p>
         <div className={styles['information_container']}>
           <h6 className="card-header d-flex justify-content-between">
-            {author ? author : 'Unknown'} | {time}
+            {author
+              ? author?.length > 60
+                ? `${author.substring(0, 40)}...`
+                : author
+              : 'Unknown'}{' '}
+            | {time}
           </h6>
           <IconButton
             onClick={() => {

@@ -34,7 +34,7 @@ function Programming() {
   }, [search]);
   return (
     <>
-      <LayoutSection title="Popular News">
+      <LayoutSection title="Popular News" space="small">
         {popularNews &&
           popularNews.map((item) => {
             return (
