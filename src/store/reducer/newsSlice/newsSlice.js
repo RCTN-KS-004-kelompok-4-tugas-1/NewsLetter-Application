@@ -7,13 +7,8 @@ const API_KEY = '5ebaeb88c7804e0abe00744a3c5094df';
 // const API_KEY = 'cdd17b2a52fe4f9e9cfb76e7cf5429e7';
 const NEWS_URL = `https://newsapi.org/v2/everything`;
 const NEWS_URL_POPULAR = `&sortBy=popularity&pageSize=6&apiKey=${API_KEY}`;
-// const NEWS_URL_POPULAR = `https://newsapi.org/v2/everything?q=indonesia&sortBy=popularity&pageSize=6&apiKey=${API_KEY}`;
-
 const NEWS_URL_RECENT = `&sortBy=publishedAt&pageSize=30&apiKey=${API_KEY}`;
-// const NEWS_URL_RECENT = `https://newsapi.org/v2/everything?q=indonesia&sortBy=publishedAt&pageSize=30&apiKey=${API_KEY}`;
-
 const NEWS_URL_INDONESIA = `https://newsapi.org/v2/top-headlines?country=id`;
-// const NEWS_URL_INDONESIA_POPULAR = `https://newsapi.org/v2/top-headlines?country=id&q=presiden&apiKey=${API_KEY}`;
 const NEWS_URL_INDONESIA_POPULAR = `&apiKey=${API_KEY}`;
 
 const initialState = {
