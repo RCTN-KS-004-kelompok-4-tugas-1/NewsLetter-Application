@@ -58,13 +58,14 @@ function Programming() {
             return (
               <CardRecent
                 key={item.id}
-                onClick={() => (window.location.href = item.url)}
-                img={item.urlToImage}
-                category={`${search ? 'recent' : 'Programming'}`}
-                title={item.title}
-                author={`${item.author} |  ${moment(item.publishedAt).format(
-                  'MMMM Do YYYY',
-                )} `}
+                data={{
+                  img: item.urlToImage,
+                  link: item.url,
+                  category: search ? 'recent' : 'Programming',
+                  title: item.title,
+                  author: item.author,
+                  time: moment(item.publishedAt).format('MMMM Do YYYY'),
+                }}
               />
             );
           })}

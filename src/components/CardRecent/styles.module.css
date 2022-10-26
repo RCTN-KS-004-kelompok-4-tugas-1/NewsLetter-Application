@@ -55,7 +55,13 @@
   font-size: 16px;
   line-height: 19px;
 }
-
+.button {
+  position: absolute;
+  right: 2px;
+}
+.information_container {
+  position: relative;
+}
 @media screen and (max-width: 768px) {
   .card {
     width: 90%;
