@@ -5,11 +5,10 @@ import CardRecent from '../../components/CardRecent';
 import LayoutSection from '../../components/LayoutSection';
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment/moment';
-
 import {
   fetchNewsPopular,
   fetchNewsRecent,
-} from '../../store/reducer/newsSlice/newsSlice';
+} from '../../store/reducer/newsSlice';
 
 function Programming() {
   const dispatch = useDispatch();

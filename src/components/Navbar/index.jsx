@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setSearch } from '../../store/reducer/searchSlice/searchSlice';
+import { setSearch } from '../../store/reducer/searchSlice';
 import { NavLink } from 'react-router-dom';
 import { NAV_ITEM as navigations } from '../../utils/constants/navItem';
 import Nav from 'react-bootstrap/Nav';
