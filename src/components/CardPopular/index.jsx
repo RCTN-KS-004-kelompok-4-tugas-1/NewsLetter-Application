@@ -1,6 +1,7 @@
 import React from 'react';
-import ButtonSave from '../ButtonSave';
+import Button from '../Button';
 import styles from './style.module.css';
+
 function CardPopular(props) {
   const { img, link, category, title, description } = props.data;
   return (
@@ -13,7 +14,7 @@ function CardPopular(props) {
         </a>
         <p className="w-100">{description}</p>
         <div className="align-self-end mb-3">
-          <ButtonSave>Save</ButtonSave>
+          <Button>Save</Button>
         </div>
       </div>
     </div>
