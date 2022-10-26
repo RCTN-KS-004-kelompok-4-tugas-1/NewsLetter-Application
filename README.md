@@ -4,7 +4,7 @@
 
 ### DESKTOP
 
-![Image of Thumbnail ](/1.png)
+![image](https://user-images.githubusercontent.com/87609169/198074725-c7c7e5c7-67b2-4bd1-a627-987013098102.png)
 
 ### Mobile
 
