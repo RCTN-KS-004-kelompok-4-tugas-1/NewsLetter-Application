@@ -9,6 +9,10 @@
   margin-bottom: 5rem;
 }
 
+.card:hover {
+  box-shadow: var(--hover-shadow);
+  margin-top: 20px;
+}
 .card img {
   width: 100%;
   height: 300px;

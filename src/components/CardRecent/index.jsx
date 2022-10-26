@@ -35,11 +35,7 @@ function CardRecent(props) {
             }}
             className={styles.button}
           >
-            {state ? (
-              <IconBookmarkFilled width={26} height={26} />
-            ) : (
-              <IconBookmark color="#ffffff" />
-            )}
+            {state ? <IconBookmarkFilled /> : <IconBookmark />}
           </IconButton>
         </div>
       </div>

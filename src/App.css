@@ -4,6 +4,7 @@
   --gray-2: #e6e6e6;
   --blue: #67aadc;
   --blue-hover: #518ab6;
+  --hover-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
 .App {
