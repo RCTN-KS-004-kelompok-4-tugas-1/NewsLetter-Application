@@ -11,7 +11,7 @@ function CardPopular(props) {
   const state = newsList.filter((news) => news.title === title)[0];
   return (
     <div className={styles.card}>
-      <img src={img} alt="" />
+      <img src={img} alt="news-cover" />
       <div className="container d-flex flex-column ps-3">
         <h2 className="mt-3 mb-2">{category}</h2>
         <a href={link} className="text-decoration-none text-dark">
