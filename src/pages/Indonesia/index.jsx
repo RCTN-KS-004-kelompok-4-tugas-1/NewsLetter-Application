@@ -21,11 +21,12 @@ function Indonesia() {
   useEffect(() => {
     dispatch(fetchIndonesiaPopular('indonesia'));
     dispatch(fetchNewsRecent('indonesia'));
+    //eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     dispatch(fetchIndonesiaPopular(search));
-    // dispatch(fetchNewsRecent(search));
+    //eslint-disable-next-line
   }, [search]);
   return (
     <>

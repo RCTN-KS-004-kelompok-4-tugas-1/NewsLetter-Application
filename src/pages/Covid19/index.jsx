@@ -20,6 +20,7 @@ function Covid19() {
   useEffect(() => {
     dispatch(fetchNewsPopular('covid19'));
     dispatch(fetchNewsRecent('covid19'));
+    //eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -30,6 +31,7 @@ function Covid19() {
       dispatch(fetchNewsPopular('covid19'));
       dispatch(fetchNewsRecent('covid19'));
     }
+    //eslint-disable-next-line
   }, [search]);
   return (
     <>

@@ -20,6 +20,7 @@ function Programming() {
   useEffect(() => {
     dispatch(fetchNewsPopular('Programming'));
     dispatch(fetchNewsRecent('Programming'));
+    //eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -30,6 +31,7 @@ function Programming() {
       dispatch(fetchNewsPopular('Programming'));
       dispatch(fetchNewsRecent('Programming'));
     }
+    //eslint-disable-next-line
   }, [search]);
   return (
     <>
