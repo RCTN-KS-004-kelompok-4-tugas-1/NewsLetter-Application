@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import CardPopular from '../../components/CardPopular';
 import CardRecent from '../../components/CardRecent';
 import LayoutSection from '../../components/LayoutSection';
@@ -33,16 +33,18 @@ function HomePage() {
         {popularNews &&
           popularNews.map((item) => {
             return (
-              <CardPopular
-                key={item.id}
-                data={{
-                  img: item.urlToImage,
-                  link: item.url,
-                  category: 'popular',
-                  title: item.title,
-                  description: item.description,
-                }}
-              />
+              <Fragment key={item.url}>
+                <CardPopular
+                  data={{
+                    img: item.urlToImage,
+                    link: item.url,
+                    category: 'popular',
+                    title: item.title,
+                    description: item.description,
+                    time: moment(item.publishedAt).format('MMMM Do YYYY'),
+                  }}
+                />
+              </Fragment>
             );
           })}
         {popularNews.length === 0 && (
@@ -53,17 +55,18 @@ function HomePage() {
         {newsRecent &&
           newsRecent.map((item) => {
             return (
-              <CardRecent
-                key={item.id}
-                data={{
-                  img: item.urlToImage,
-                  link: item.url,
-                  category: 'recent',
-                  title: item.title,
-                  author: item.author,
-                  time: moment(item.publishedAt).format('MMMM Do YYYY'),
-                }}
-              />
+              <Fragment key={item.url}>
+                <CardRecent
+                  data={{
+                    img: item.urlToImage,
+                    link: item.url,
+                    category: 'recent',
+                    title: item.title,
+                    author: item.author,
+                    time: moment(item.publishedAt).format('MMMM Do YYYY'),
+                  }}
+                />
+              </Fragment>
             );
           })}
         {newsRecent.length === 0 && (

@@ -46,6 +46,7 @@ function Covid19() {
                   category: search ? 'popular' : 'covid19',
                   title: item.title,
                   description: item.description,
+                  time: moment(item.publishedAt).format('MMMM Do YYYY'),
                 }}
               />
             );

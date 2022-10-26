@@ -1,9 +1,14 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addSaved, deleteSaved } from '../../store/reducer/savedSlice';
 import Button from '../Button';
 import styles from './style.module.css';
 
 function CardPopular(props) {
   const { img, link, category, title, description } = props.data;
+  const dispatch = useDispatch();
+  const newsList = useSelector((state) => state.saved.value);
+  const state = newsList.filter((news) => news.title === title)[0];
   return (
     <div className={styles.card}>
       <img src={img} alt="" />
@@ -14,7 +19,15 @@ function CardPopular(props) {
         </a>
         <p className="w-100">{description}</p>
         <div className="align-self-end mb-3">
-          <Button>Save</Button>
+          <Button
+            onClick={() => {
+              state
+                ? dispatch(deleteSaved(title))
+                : dispatch(addSaved(props.data));
+            }}
+          >
+            {state ? 'Unsave' : 'Save'}
+          </Button>
         </div>
       </div>
     </div>

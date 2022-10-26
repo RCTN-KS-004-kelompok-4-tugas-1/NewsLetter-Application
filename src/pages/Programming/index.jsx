@@ -46,6 +46,7 @@ function Programming() {
                   category: search ? 'popular' : 'Programming',
                   title: item.title,
                   description: item.description,
+                  time: moment(item.publishedAt).format('MMMM Do YYYY'),
                 }}
               />
             );
