@@ -14,12 +14,16 @@ function CardRecent(props) {
     <div className={styles.card}>
       <img src={img} alt="news-cover" />
       <div className="card-body">
-        <h2 className="card-title">{category}</h2>
+        <h2>{category}</h2>
         <a href={link} className="text-decoration-none text-dark">
-          <h3 className="card-title">{title}</h3>
+          <h3 className="card-title">
+            {title?.toString().length > 70
+              ? `${title.substring(0, 69)} ...`
+              : title}
+          </h3>
         </a>
         <p className="card-text">{description}</p>
-        <div className={`d-flex ${styles['information_container']}`}>
+        <div className={styles['information_container']}>
           <h6 className="card-header d-flex justify-content-between">
             {author ? author : 'Unknown'} | {time}
           </h6>

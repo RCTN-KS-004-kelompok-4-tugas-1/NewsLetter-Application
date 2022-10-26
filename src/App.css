@@ -24,3 +24,6 @@
 .brand {
   color: black;
 }
+.card-title {
+  min-height: 42px;
+}
