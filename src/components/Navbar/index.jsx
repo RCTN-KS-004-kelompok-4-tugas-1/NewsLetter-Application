@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setSearch } from '../../store/reducer/searchSlice/searchSlice';
+import { NavLink } from 'react-router-dom';
 import { NAV_ITEM as navigations } from '../../utils/constants/navItem';
 import Nav from 'react-bootstrap/Nav';
 import { default as NavComponent } from 'react-bootstrap/Navbar';
-import styles from './styles.module.css';
 import { IconSearch } from '../Icons/index';
-import { useDispatch } from 'react-redux';
-import { setSearch } from '../../store/reducer/searchSlice/searchSlice';
+import styles from './styles.module.css';
+
 function Navbar() {
   const dispatch = useDispatch();
   const [input, setInput] = useState('');
