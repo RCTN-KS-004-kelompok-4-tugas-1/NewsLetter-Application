@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
 import CardPopular from '../../components/CardPopular';
 import CardRecent from '../../components/CardRecent';
 import LayoutSection from '../../components/LayoutSection';
@@ -20,11 +19,13 @@ function HomePage() {
   useEffect(() => {
     dispatch(fetchNewsPopular('global'));
     dispatch(fetchNewsRecent('global'));
+    //eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     dispatch(fetchNewsPopular(search));
     dispatch(fetchNewsRecent(search));
+    //eslint-disable-next-line
   }, [search]);
   return (
     <>
