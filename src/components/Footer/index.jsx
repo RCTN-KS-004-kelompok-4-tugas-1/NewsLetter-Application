@@ -14,7 +14,7 @@ function Footer() {
         </h4>
         <p>
           This project was made for Hacktiv8 Bootcamp X Kampus Merdeka. This
-          website is a Newsletter application, which data are shown from newsApi
+          website is a Newsletter application, which data are shown from NewsApi
         </p>
         <p>This Website made by : </p>
         <nav>
