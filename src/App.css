@@ -1,10 +1,11 @@
 :root {
   --background-color: #f4f8fb;
-  --gray: #9f9f9f;
+  --gray-1: #9f9f9f;
   --gray-2: #e6e6e6;
-  --blue: #67aadc;
-  --blue-hover: #518ab6;
+  --blue-1: #67aadc;
   --blue-2: #2698ee;
+  --blue-3: #8ec0e7;
+  --blue-hover: #518ab6;
   --hover-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 

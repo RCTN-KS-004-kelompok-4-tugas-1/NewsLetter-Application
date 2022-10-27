@@ -75,7 +75,7 @@ function Navbar() {
             <button
               type="submit"
               className="btn"
-              style={{ backgroundColor: 'var(--blue)' }}
+              style={{ backgroundColor: 'var(--blue-1)' }}
               onClick={handleSubmit}
             >
               <IconSearch color="#ffffff" />
