@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addSaved, deleteSaved } from '../../store/reducer/savedSlice';
 import Button from '../Button';
-import styles from './style.module.css';
+import styles from './styles.module.css';
 
 function CardPopular(props) {
   const { img, link, category, title, description } = props.data;
