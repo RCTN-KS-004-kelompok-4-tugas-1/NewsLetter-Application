@@ -10,6 +10,7 @@ import {
   NotFound,
 } from './pages';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="covid-19" element={<Covid19 />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

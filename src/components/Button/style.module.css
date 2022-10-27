@@ -1,7 +1,7 @@
 .btn {
   border: none;
   outline: none;
-  background-color: var(--blue);
+  background-color: var(--blue-1);
   border-radius: 7px;
   display: flex;
   justify-content: center;
