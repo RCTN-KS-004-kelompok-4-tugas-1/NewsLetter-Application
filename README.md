@@ -1,6 +1,8 @@
 # News Letter Application
 
-
+To try this project you need to login, please use this credentials below : <br/>
+Email : dummy@gmail.com <br/>
+Password :dummy123 <br/>  <br/>
 **Table of Contents**
   - [About Project](#about-project)
   - [Prerequisites](#prerequisites)
@@ -12,9 +14,7 @@
   ![Center Website View](https://user-images.githubusercontent.com/87609169/198291530-0fa486df-f58c-48eb-870f-96ac47b8023d.png)
   ![Bottom Website View](https://user-images.githubusercontent.com/87609169/198291822-f2930e5d-7869-46b6-92ac-e73f43b7a121.png)
 This project was made for Hacktiv8 Bootcamp X Kampus Merdeka. This website is a Newsletter application, which data are shown from NewsApi. 
-To try this project you need to login, please use this credentials below :
-Email : dummy@gmail.com
-Password :dummy123
+
 
 ## Prerequisites 
 To run this project you need to use this software.
