@@ -23,7 +23,7 @@ function Navbar() {
     <NavComponent bg="light" expand="lg">
       <NavComponent.Toggle aria-controls="basic-navbar-nav" />
       <div className={styles['nav_brand']}>
-        <NavLink to="/" className="brand text-decoration-none">
+        <NavLink to="/home-page" className="brand text-decoration-none">
           N E W S
         </NavLink>
       </div>
@@ -56,7 +56,13 @@ function Navbar() {
           >
             Saved
           </NavLink>
-
+          <NavLink
+            to="/"
+            onClick={() => localStorage.removeItem('Login')}
+            className="link text-decoration-none"
+          >
+            Logout
+          </NavLink>
           <form
             className={`input-group ${styles.input}`}
             onSubmit={handleSubmit}

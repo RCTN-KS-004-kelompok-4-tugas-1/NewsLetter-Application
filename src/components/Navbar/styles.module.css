@@ -14,7 +14,7 @@
 .nav_item--right {
   display: flex;
   gap: 20px;
-  flex-basis: 20%;
+  flex-basis: 30%;
 }
 .input {
   flex-wrap: nowrap;

@@ -8,6 +8,7 @@ import {
   Programming,
   Saved,
   NotFound,
+  Login,
 } from './pages';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -17,7 +18,8 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Login />} />
+        <Route path="home-page" element={<HomePage />} />
         <Route path="indonesia" element={<Indonesia />} />
         <Route path="programming" element={<Programming />} />
         <Route path="saved" element={<Saved />} />
