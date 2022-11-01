@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
-import { useSelector } from 'react-redux';
+import { useSaved } from '../../utils/hooks';
 import CardRecent from '../../components/CardRecent';
 import LayoutSection from '../../components/LayoutSection';
 
 function Saved() {
-  const newsList = useSelector((state) => state.saved.value);
+  const [newsList] = useSaved();
 
   return (
     <LayoutSection title="Saved News" space="small">
