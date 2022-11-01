@@ -5,6 +5,9 @@
   font-size: 26px;
   line-height: 30px;
 }
+.cards {
+  min-height: 75vh;
+}
 
 @media screen and (max-width: 768px) {
   .layout h1 {
