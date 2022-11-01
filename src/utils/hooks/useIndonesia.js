@@ -1,19 +1,21 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { setSearch } from '../../store/reducer/searchSlice';
 
 import {
   fetchIndonesiaPopular,
-  fetchNewsRecent,
+  fetchNews,
 } from '../../store/reducer/newsSlice';
+
 function useIndonesia() {
   const dispatch = useDispatch();
   const { search } = useSelector((state) => state.search);
   const { newsList: popularNews } = useSelector((state) => state.news);
-  const { newsRecent } = useSelector((state) => state.news);
-
+  const { newsRecent, isLoading } = useSelector((state) => state.news);
   useEffect(() => {
+    dispatch(setSearch(''));
     dispatch(fetchIndonesiaPopular('indonesia'));
-    dispatch(fetchNewsRecent('indonesia'));
+    dispatch(fetchNews({ query: 'indonesia', jenis: 'recent' }));
     //eslint-disable-next-line
   }, []);
 
@@ -21,7 +23,7 @@ function useIndonesia() {
     dispatch(fetchIndonesiaPopular(search));
     //eslint-disable-next-line
   }, [search]);
-  return [popularNews, newsRecent];
+  return [popularNews, newsRecent, isLoading];
 }
 
 export default useIndonesia;

@@ -7,7 +7,7 @@ import LayoutSection from '../../components/LayoutSection';
 import moment from 'moment/moment';
 
 function Covid19() {
-  const [popularNews, newsRecent, search] = useCovid;
+  const [popularNews, newsRecent, search] = useCovid();
   return (
     <>
       <LayoutSection title="Popular News">

@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  fetchNewsPopular,
-  fetchNewsRecent,
-} from '../../store/reducer/newsSlice';
+import { setSearch } from '../../store/reducer/searchSlice';
+
+import { fetchNews } from '../../store/reducer/newsSlice';
 
 function useHomepage() {
   const dispatch = useDispatch();
@@ -11,14 +10,20 @@ function useHomepage() {
   const { newsRecent } = useSelector((state) => state.news);
   const { search } = useSelector((state) => state.search);
   useEffect(() => {
-    dispatch(fetchNewsPopular('global'));
-    dispatch(fetchNewsRecent('global'));
+    dispatch(setSearch(''));
+    dispatch(fetchNews({ query: 'global', jenis: 'popular' }));
+    dispatch(fetchNews({ query: 'global', jenis: 'recent' }));
     //eslint-disable-next-line
   }, []);
 
   useEffect(() => {
-    dispatch(fetchNewsPopular(search));
-    dispatch(fetchNewsRecent(search));
+    if (search) {
+      dispatch(fetchNews({ query: search, jenis: 'popular' }));
+      dispatch(fetchNews({ query: search, jenis: 'recent' }));
+    } else {
+      dispatch(fetchNews({ query: 'global', jenis: 'popular' }));
+      dispatch(fetchNews({ query: 'global', jenis: 'recent' }));
+    }
     //eslint-disable-next-line
   }, [search]);
   return [popularNews, newsRecent];
