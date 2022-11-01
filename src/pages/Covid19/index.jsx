@@ -1,36 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from 'react';
+import React from 'react';
+import { useCovid } from '../../utils/hooks';
 import CardPopular from '../../components/CardPopular';
 import CardRecent from '../../components/CardRecent';
 import LayoutSection from '../../components/LayoutSection';
-import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment/moment';
-import {
-  fetchNewsPopular,
-  fetchNewsRecent,
-} from '../../store/reducer/newsSlice';
 
 function Covid19() {
-  const dispatch = useDispatch();
-  const { newsList: popularNews } = useSelector((state) => state.news);
-  const { newsRecent } = useSelector((state) => state.news);
-  const { search } = useSelector((state) => state.search);
-  useEffect(() => {
-    dispatch(fetchNewsPopular('covid19'));
-    dispatch(fetchNewsRecent('covid19'));
-    //eslint-disable-next-line
-  }, []);
-
-  useEffect(() => {
-    if (search) {
-      dispatch(fetchNewsPopular(search));
-      dispatch(fetchNewsRecent(search));
-    } else {
-      dispatch(fetchNewsPopular('covid19'));
-      dispatch(fetchNewsRecent('covid19'));
-    }
-    //eslint-disable-next-line
-  }, [search]);
+  const [popularNews, newsRecent, search] = useCovid;
   return (
     <>
       <LayoutSection title="Popular News">

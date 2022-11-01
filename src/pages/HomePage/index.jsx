@@ -1,31 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
+import { useHomepage } from '../../utils/hooks';
 import CardPopular from '../../components/CardPopular';
 import CardRecent from '../../components/CardRecent';
 import LayoutSection from '../../components/LayoutSection';
-import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment/moment';
-import {
-  fetchNewsPopular,
-  fetchNewsRecent,
-} from '../../store/reducer/newsSlice';
 
 function HomePage() {
-  const dispatch = useDispatch();
-  const { newsList: popularNews } = useSelector((state) => state.news);
-  const { newsRecent } = useSelector((state) => state.news);
-  const { search } = useSelector((state) => state.search);
-  useEffect(() => {
-    dispatch(fetchNewsPopular('global'));
-    dispatch(fetchNewsRecent('global'));
-    //eslint-disable-next-line
-  }, []);
-
-  useEffect(() => {
-    dispatch(fetchNewsPopular(search));
-    dispatch(fetchNewsRecent(search));
-    //eslint-disable-next-line
-  }, [search]);
+  const [popularNews, newsRecent] = useHomepage();
   return (
     <>
       <LayoutSection title="Popular News">
