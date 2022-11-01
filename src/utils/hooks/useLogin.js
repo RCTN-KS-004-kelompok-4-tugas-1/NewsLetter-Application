@@ -1,12 +1,13 @@
-import { account } from '../../utils/constants/account';
+import { account, loginToken } from '../../utils/constants/account';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import isAuth from '../helpers/authentication';
 
 const initialValue = {
   email: '',
   password: '',
 };
-const loginToken = 'loggedinToken';
+
 function useLogin() {
   const [state, setState] = useState(initialValue);
   const [err, setErr] = useState('');
@@ -30,11 +31,10 @@ function useLogin() {
     }
   };
   useEffect(() => {
-    const token = localStorage.getItem('Login');
-    token === loginToken && navigate('/home-page');
+    isAuth() && navigate('/home-page');
     //eslint-disable-next-line
   }, []);
-  return [err, hide, state, { handleSubmit, handleChange, setHide }];
+  return [err, hide, state, { handleSubmit, handleChange, setHide, setErr }];
 }
 
 export default useLogin;

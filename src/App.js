@@ -1,32 +1,11 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Routes, Route } from 'react-router-dom';
-import {
-  Indonesia,
-  HomePage,
-  Covid19,
-  Programming,
-  Saved,
-  NotFound,
-  Login,
-} from './pages';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import GlobalRoute from './routes';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="home-page" element={<HomePage />} />
-        <Route path="indonesia" element={<Indonesia />} />
-        <Route path="programming" element={<Programming />} />
-        <Route path="saved" element={<Saved />} />
-        <Route path="covid-19" element={<Covid19 />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
+      <GlobalRoute />
     </div>
   );
 }
