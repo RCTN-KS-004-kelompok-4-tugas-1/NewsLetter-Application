@@ -9,7 +9,6 @@ function useCovid() {
   const { search } = useSelector((state) => state.search);
 
   useEffect(() => {
-    console.log('hello');
     dispatch(setSearch(''));
     dispatch(fetchNews({ query: 'covid19', jenis: 'popular' }));
     dispatch(fetchNews({ query: 'covid19', jenis: 'recent' }));
@@ -17,8 +16,6 @@ function useCovid() {
   }, []);
 
   useEffect(() => {
-    console.log('search >>>>>', search);
-
     if (search) {
       dispatch(fetchNews({ query: search, jenis: 'popular' }));
       dispatch(fetchNews({ query: search, jenis: 'recent' }));
