@@ -7,11 +7,12 @@ import LayoutSection from '../../components/LayoutSection';
 import moment from 'moment/moment';
 
 function Indonesia() {
-  const [popularNews, newsRecent] = useIndonesia();
+  const [popularNews, newsRecent, isLoading] = useIndonesia();
   return (
     <>
       <LayoutSection title="Popular News">
-        {popularNews &&
+        {!isLoading &&
+          popularNews &&
           popularNews.map((item) => {
             return (
               <CardPopular

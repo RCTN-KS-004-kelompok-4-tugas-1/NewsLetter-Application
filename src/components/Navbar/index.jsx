@@ -1,24 +1,14 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { setSearch } from '../../store/reducer/searchSlice';
+
 import { NavLink } from 'react-router-dom';
 import { NAV_ITEM as navigations } from '../../utils/constants/navItem';
 import Nav from 'react-bootstrap/Nav';
 import { default as NavComponent } from 'react-bootstrap/Navbar';
 import { IconSearch } from '../Icons/index';
 import styles from './styles.module.css';
-
+import { useNavbar } from '../../utils/hooks/useNavbar';
 function Navbar() {
-  const dispatch = useDispatch();
-  const [input, setInput] = useState('');
-  const handleChange = (e) => {
-    setInput(e.target.value);
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(setSearch(input));
-  };
-
+  const [handleChange, handleSubmit, handleLogout, input] = useNavbar();
   return (
     <NavComponent bg="light" expand="lg">
       <NavComponent.Toggle aria-controls="basic-navbar-nav" />
@@ -58,7 +48,7 @@ function Navbar() {
           </NavLink>
           <NavLink
             to="/"
-            onClick={() => localStorage.removeItem('Login')}
+            onClick={handleLogout}
             className="link text-decoration-none"
           >
             Logout
