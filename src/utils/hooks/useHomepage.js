@@ -6,8 +6,12 @@ import { fetchNews } from '../../store/reducer/newsSlice';
 
 function useHomepage() {
   const dispatch = useDispatch();
-  const { newsList: popularNews } = useSelector((state) => state.news);
-  const { newsRecent } = useSelector((state) => state.news);
+  const {
+    newsList: popularNews,
+    newsRecent,
+    isLoading,
+  } = useSelector((state) => state.news);
+
   const { search } = useSelector((state) => state.search);
   useEffect(() => {
     dispatch(setSearch(''));
@@ -26,7 +30,7 @@ function useHomepage() {
     }
     //eslint-disable-next-line
   }, [search]);
-  return [popularNews, newsRecent];
+  return [popularNews, newsRecent, isLoading];
 }
 
 export default useHomepage;

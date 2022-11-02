@@ -5,8 +5,12 @@ import { setSearch } from '../../store/reducer/searchSlice';
 
 function useProgramming() {
   const dispatch = useDispatch();
-  const { newsList: popularNews } = useSelector((state) => state.news);
-  const { newsRecent } = useSelector((state) => state.news);
+  const {
+    newsList: popularNews,
+    newsRecent,
+    isLoading,
+  } = useSelector((state) => state.news);
+
   const { search } = useSelector((state) => state.search);
   useEffect(() => {
     dispatch(setSearch(''));
@@ -25,7 +29,7 @@ function useProgramming() {
     }
     //eslint-disable-next-line
   }, [search]);
-  return [popularNews, newsRecent, search];
+  return [popularNews, newsRecent, search, isLoading];
 }
 
 export default useProgramming;

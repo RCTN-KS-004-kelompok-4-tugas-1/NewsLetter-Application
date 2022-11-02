@@ -4,8 +4,12 @@ import { fetchNews } from '../../store/reducer/newsSlice';
 import { setSearch } from '../../store/reducer/searchSlice';
 function useCovid() {
   const dispatch = useDispatch();
-  const { newsList: popularNews } = useSelector((state) => state.news);
-  const { newsRecent } = useSelector((state) => state.news);
+  const {
+    newsList: popularNews,
+    isLoading,
+    newsRecent,
+  } = useSelector((state) => state.news);
+
   const { search } = useSelector((state) => state.search);
 
   useEffect(() => {
@@ -26,7 +30,7 @@ function useCovid() {
     //eslint-disable-next-line
   }, [search]);
 
-  return [popularNews, newsRecent, search];
+  return [popularNews, newsRecent, search, isLoading];
 }
 
 export default useCovid;

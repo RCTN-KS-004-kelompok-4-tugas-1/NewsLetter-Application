@@ -10,8 +10,11 @@ import {
 function useIndonesia() {
   const dispatch = useDispatch();
   const { search } = useSelector((state) => state.search);
-  const { newsList: popularNews } = useSelector((state) => state.news);
-  const { newsRecent, isLoading } = useSelector((state) => state.news);
+  const {
+    newsRecent,
+    isLoading,
+    newsList: popularNews,
+  } = useSelector((state) => state.news);
   useEffect(() => {
     dispatch(setSearch(''));
     dispatch(fetchIndonesiaPopular('indonesia'));
