@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { loginToken } from '../../../utils/constants/account';
+import { loginToken, account } from '../../../utils/constants/account';
 const initialState = {
   isLoading: false,
   isSuccess: false,
@@ -9,11 +9,11 @@ const initialState = {
 const loginAPI = async ({ email, password }) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (email === 'dummy@gmail.com' && password === 'dummy123') {
+      if (email === account.email && password === account.password) {
         resolve({
           responseCode: 200,
           data: {
-            token: 'abcdesfasad',
+            token: loginToken,
           },
         });
       } else {
@@ -43,10 +43,13 @@ export const loginSlice = createSlice({
   initialState,
   reducers: {
     logout: (state) => {
+      reset(state);
+      localStorage.removeItem('Login');
+    },
+    reset: (state) => {
       state.isSuccess = initialState.isSuccess;
       state.isLoading = initialState.isLoading;
       state.errorMessage = initialState.errorMessage;
-      localStorage.removeItem('Login');
     },
   },
   extraReducers(builder) {
@@ -68,5 +71,5 @@ export const loginSlice = createSlice({
   },
 });
 
-export const { logout } = loginSlice.actions;
+export const { logout, reset } = loginSlice.actions;
 export default loginSlice.reducer;

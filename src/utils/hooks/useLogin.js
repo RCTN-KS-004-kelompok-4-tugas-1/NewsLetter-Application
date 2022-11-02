@@ -1,9 +1,9 @@
-import { account, loginToken } from '../../utils/constants/account';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import isAuth from '../helpers/authentication';
 import { useDispatch, useSelector } from 'react-redux';
-import { fakeLogin } from '../../store/reducer/loginSlice';
+import { fakeLogin, reset } from '../../store/reducer/loginSlice';
+import isAuth from '../helpers/authentication';
+
 const initialValue = {
   email: '',
   password: '',
@@ -11,11 +11,12 @@ const initialValue = {
 
 function useLogin() {
   const [state, setState] = useState(initialValue);
-  const [err, setErr] = useState('');
-  const [hide, setHide] = useState(false);
+  const [hide, setHide] = useState(true);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { errorMessage, isSuccess } = useSelector((state) => state.login);
+  const { errorMessage, isSuccess, isLoading } = useSelector(
+    (state) => state.login,
+  );
   const handleChange = (e) => {
     const key = e.target.id;
     const val = e.target.value;
@@ -23,31 +24,31 @@ function useLogin() {
       return { ...state, [key]: val };
     });
   };
+  const handleReset = () => {
+    dispatch(reset());
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let email = state.email;
-    let password = state.password;
+    const email = state.email;
+    const password = state.password;
     dispatch(fakeLogin({ email, password }));
   };
   useEffect(() => {
-    if (isSuccess) {
-      setState(initialValue);
-      // isAuth() && navigate('/');
-    }
+    isSuccess && setState(initialValue);
   }, [isSuccess]);
-
-  useEffect(() => {
-    if (errorMessage) {
-      setErr(errorMessage);
-    }
-  }, [errorMessage]);
 
   useEffect(() => {
     isAuth() && navigate('/home-page');
     //eslint-disable-next-line
   }, [isSuccess]);
-  return [err, hide, state, { handleSubmit, handleChange, setHide, setErr }];
+  return [
+    errorMessage,
+    hide,
+    state,
+    isLoading,
+    { handleSubmit, handleChange, setHide, handleReset },
+  ];
 }
 
 export default useLogin;

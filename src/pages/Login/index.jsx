@@ -3,8 +3,14 @@ import React from 'react';
 import useLogin from '../../utils/hooks/useLogin';
 
 function Login() {
-  const [err, hide, state, { handleSubmit, handleChange, setHide, setErr }] =
-    useLogin();
+  const [
+    errorMessage,
+    hide,
+    state,
+    isLoading,
+    { handleSubmit, handleChange, setHide, handleReset },
+  ] = useLogin();
+
   return (
     <main
       className="w-100  justify-content-center d-flex align-items-center "
@@ -20,7 +26,7 @@ function Login() {
       >
         <form action="submit" onSubmit={handleSubmit}>
           <p style={{ fontWeight: 'bold' }}>Welcome! Please Login</p>
-          {err && (
+          {errorMessage && (
             <small
               id="formHelp"
               className="form-text text-danger position-absolute "
@@ -29,7 +35,19 @@ function Login() {
                 bottom: '10px',
               }}
             >
-              *{err}
+              {errorMessage && `*${errorMessage}`}
+            </small>
+          )}
+          {isLoading && (
+            <small
+              id="formHelp"
+              className="form-text text-danger position-absolute "
+              style={{
+                right: '10px',
+                bottom: '10px',
+              }}
+            >
+              {isLoading && 'Loading...'}
             </small>
           )}
           <div className="form-group mt-1">
@@ -41,7 +59,7 @@ function Login() {
               aria-describedby="emailHelp"
               placeholder="Enter email"
               required
-              onMouseDown={() => setErr('')}
+              onMouseDown={() => handleReset()}
               onChange={handleChange}
               value={state.email}
             />
@@ -53,7 +71,7 @@ function Login() {
               className="form-control"
               id="password"
               placeholder="Password"
-              onMouseDown={() => setErr('')}
+              onMouseDown={() => handleReset()}
               value={state.password}
               required
               onChange={handleChange}
@@ -64,7 +82,7 @@ function Login() {
               type="checkbox"
               className="form-check-input"
               id="unhide"
-              value={hide}
+              defaultChecked={hide}
               onChange={() => setHide((state) => !state)}
             />
             <label className="form-check-label" for="exampleCheck1">
